@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админка - BestGames</title>
+    <link rel="stylesheet" href="css/base.css">
+    <!--Фишки для SEO, чтобы сайт взлетел в Яндексе-->
+    <link rel="shortcut icon" href="assets/img/icons/logo.svg" type="image/x-icon">
+    <meta name="description" content="Сайт для покупки игр, лучшие цены, последние новинки и выгодные скидки. Только у нас">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="/assets/img/icons/logo.svg" alt="bestgames logo">
+            <h3>best<span>games</span></h3>
+        </a>
+        <nav id="menu">
+            <a href="index.html#search">Поиск</a>
+            <a href="login.html">Войти</a>
+            <a href="profile.html">Личный кабинет</a>
+            <a href="catalog.html">Каталог игр</a>
+        </nav>
+        <a href="#menu" style="font-size: 24px;" class="btn__burger">≡</a>
+    </header>
+    <main>
+        <section>
+            
+            <form action="GET">
+                <h1>Админка: Добавить игру</h1>
+                <label for="title">Название игры
+                <input type="text" name="title" id="title" placeholder="Minecraft" required></label>
+                <label for="type">Жанр
+                <input type="text" name="type" id="type" placeholder="Песочница" required></label>
+                <label for="pic">Изображение
+                <input type="file" name="pic" id="pic" accept="image/*"></label>
+                <label for="dev">Компания-разработчик
+                <input type="text" name="dev" id="dev" placeholder="Mojang" required></label>
+                <label for="desc">Описание
+                <textarea type="text" name="desc" id="desc" placeholder="Популярая игра в жанре песочница..." required></textarea>
+                <label for="price">Стоимость
+                <input type="number" name="price" id="price" placeholder="3 499 ₽" required></label>
+                <input type="submit" value="Добавить">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div>
+                <div class="logo">
+                    <img src="/assets/img/icons/logo.svg" alt="bestgames logo">
+                    <h3>best<span>games</span></h3>
+                </div>
+                <p>Лучший магазин с играми, честно-честно</p>
+            </div>
+            <div>
+                <a href="tel:+88009995599">+8 (800) 999-55-99</a>
+                <a href="mailto:best@games.ru">best@games.ru</a>
+                <a href="#">Клиентам</a>
+                <a href="#">Партнёрам</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div>
+                <a href="index.html">Главная</a>
+                <a href="register.html">Регистрация</a>
+                <a href="login.html">Авторизация</a>
+                <a href="profile.html">Личный кабинет</a>
+                <a href="index.html#search">Поиск</a>
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Войти - BestGames</title>
+    <link rel="stylesheet" href="css/base.css">
+    <!--Фишки для SEO, чтобы сайт взлетел в Яндексе-->
+    <link rel="shortcut icon" href="assets/img/icons/logo.svg" type="image/x-icon">
+    <meta name="description" content="Сайт для покупки игр, лучшие цены, последние новинки и выгодные скидки. Только у нас">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="/assets/img/icons/logo.svg" alt="bestgames logo">
+            <h3>best<span>games</span></h3>
+        </a>
+        <nav id="menu">
+            <a href="index.html#search">Поиск</a>
+            <a href="login.html">Войти</a>
+            <a href="profile.html">Личный кабинет</a>
+            <a href="catalog.html">Каталог игр</a>
+        </nav>
+        <a href="#menu" style="font-size: 24px;" class="btn__burger">≡</a>
+    </header>
+    <main>
+        <section class="auth-container">
+            <img src="/assets/img/games/image1.jpg" alt="Banner">
+            <form action="GET">
+                <h1>Войти в bestgames</h1>
+                <h3 class="secondary">Получи свою историю покупок, дополнительные скидки и +100 к удаче</h3>
+                <label for="mail">Электронная почта
+                <input type="email" name="mail" id="mail" placeholder="coolboy2002@ya.ru" required></label>
+                
+                <label for="pass"><span>Пароль <a href="#">Забыли пароль?</a></span>
+                <input type="password" name="pass" id="pass" placeholder="самый_сложный_пароль123" required></label>
+
+                <input type="submit" value="Войти">
+                <span class="secondary">Нету аккаунта? <a href="register.html">Регистрация</a></span>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div>
+                <div class="logo">
+                    <img src="/assets/img/icons/logo.svg" alt="bestgames logo">
+                    <h3>best<span>games</span></h3>
+                </div>
+                <p>Лучший магазин с играми, честно-честно</p>
+            </div>
+            <div>
+                <a href="tel:+88009995599">+8 (800) 999-55-99</a>
+                <a href="mailto:best@games.ru">best@games.ru</a>
+                <a href="#">Клиентам</a>
+                <a href="#">Партнёрам</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div>
+                <a href="index.html">Главная</a>
+                <a href="register.html">Регистрация</a>
+                <a href="login.html">Авторизация</a>
+                <a href="profile.html">Личный кабинет</a>
+                <a href="index.html#search">Поиск</a>
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>

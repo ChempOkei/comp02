@@ -1,0 +1,16 @@
+
+:root{
+    --primary-bg: #0F1523;
+    --secondary-bg: #1A2238;
+    --accent: #FF6B35;
+    --text: #FFFFFF;
+    --secondary-text: #8B949E;
+}
+
+.light{
+    --primary-bg: #F8F9FA;
+    --secondary-bg: #FFFFFF;
+    --accent: #FF6B35;
+    --text: #212529;
+    --secondary-text: #6C757D;
+}

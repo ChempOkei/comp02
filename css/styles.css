@@ -1,0 +1,505 @@
+/* Импорт шрифтов */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(/assets/Roboto.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/assets/Montserrat.ttf);
+}
+
+/* View Transition для переходов между страницами*/
+
+@view-transition{
+    navigation: auto
+}
+
+/*ТОТАЛЬНЫЙ сброс CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: -0.07rem;
+    font-size: 16px;
+    background-color: var(--primary-bg);
+    color: var(--text);
+    min-height: 100dvh;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+/*Акцентные цвета по всему сайту*/
+html{
+    accent-color: var(--accent);
+    scrollbar-color: var(--accent) transparent;
+    caret-color: var(--accent);
+    scroll-behavior: smooth;
+}
+
+::selection{
+    background-color: color-mix(in srgb, var(--accent) 100%, var(--primary-bg) 90%);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 900px;
+    background-color: color-mix(in srgb, var(--secondary-bg) 100%, transparent 20%);
+    backdrop-filter: blur(25px);
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+
+    .btn__burger{
+        display: none;
+    }
+}
+
+img{
+    pointer-events: none;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    span{
+        color: var(--accent);
+    }
+}
+
+nav{
+    display: flex;
+    gap: 24px;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+    font-weight: 600;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+span a{
+    color: var(--accent);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+section{
+    height: fit-content;
+    background-color: var(--secondary-bg);
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 1200px;
+    width: 100%;
+    overflow: hidden;
+    scroll-margin-top: 75px; /*Чтобы не перекрывался header'ом*/
+}
+
+#slider{
+    padding: 0;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    scroll-marker-group: after;
+    anchor-name: --slider;
+    scrollbar-width: none;
+    min-height: 450px;
+
+    .slider__slide{
+        min-width: 100%;
+        position: relative;
+        scroll-snap-align: start;
+        min-height: 300px;
+
+        &:hover{
+            img{
+                transform: scale(1.15);
+            }
+        }
+
+        .slider__slide__info{
+            width: 100%;
+            height: 50%;
+            position:absolute;
+            bottom: 0;
+            padding: 16px;
+            background: linear-gradient(transparent, #000);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: flex-end;
+
+            a{
+                width: fit-content;
+                background-color: var(--accent);
+                text-align: center;
+                padding: 12px;
+                border-radius: 6px;
+            }
+        }
+
+        img{
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+    }
+}
+
+/*Слайдер на CSS*/
+
+#slider::scroll-button(*){
+    background-color: var(--accent);
+    border: 0;
+    position: absolute;
+    padding: 12px;
+    border-radius: 50%;
+    position-anchor: --slider;
+}
+
+#slider::scroll-button(left){
+    content: '<';
+    left: anchor(left);
+    top: anchor(center);
+}
+
+#slider::scroll-button(right){
+    content: '>';
+    right: anchor(right);
+    top: anchor(center);
+}
+
+::scroll-marker-group{
+    display: flex;
+    gap: 5px;
+    place-content: center;
+}
+
+.slider__slide::scroll-marker{
+    content: '';
+    background-color: var(--secondary-bg);
+    width: 16px;
+    height: 4px;
+}
+
+.slider__slide::scroll-marker:target-current{
+    background-color: var(--accent);
+}
+
+/*Интерактивность*/
+
+body:not(.light) .advantages__advantage img{
+    filter: invert();
+}
+
+.popular-games__game, .advantages__advantage{
+    transition: .5s;
+}
+
+.popular-games__game:hover, .advantages__advantage:hover{
+    filter: brightness(1.25);
+}
+
+#popular-games{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+
+    .popular-games__game{
+        position: relative;
+        scroll-snap-align: start;
+        aspect-ratio: 2/3;
+        border-radius: 12px;
+        overflow: hidden;
+
+        &:hover{
+            img{
+                transform: scale(1.15);
+            }
+        }
+
+        & > img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .info{
+            width: 100%;
+            height: 50%;
+            position:absolute;
+            bottom: 0;
+            padding: 16px;
+            background: linear-gradient(transparent, #000);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 6px;
+
+            .tags{
+                display: flex;
+                gap: 5px;
+                color: var(--secondary-text);
+                flex-wrap: wrap;
+                span{
+                    color: #fff;
+                }
+            }
+
+            a{
+                background-color: var(--accent);
+                text-align: center;
+                padding: 12px;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+#advantages{
+    background-color: transparent;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0;
+
+    .advantages__advantage{
+        background-color: var(--secondary-bg);
+        padding: 12px;
+        border-radius: 12px;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        img{
+            height: 32px;
+            transition: .5s;
+        }
+
+        &:hover{
+            img{
+                transform: rotate(25deg);
+            }
+        }
+    }
+}
+
+#partners{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    flex-wrap: wrap;
+
+    img{
+        max-height: 100px;
+    }
+}
+
+input:not([type="checkbox"]), button, textarea{
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    appearance: none;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px;
+    background-color: var(--primary-bg);
+    color: var(--text);
+    outline: none;
+}
+
+input[type="search"]{
+    background: url(/assets/img/icons/search-light.svg) no-repeat 4px;
+    padding-left: 32px;
+    width: 100%;
+}
+
+.light input[type="search"]{
+    background: url(/assets/img/icons/search.svg) no-repeat 4px;
+}
+
+input[type="submit"]{
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+button{
+    width: 100%;
+    background-color: var(--primary-bg);
+    color: var(--text);
+}
+
+footer{
+    background-color: var(--secondary-bg);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        max-width: 1200px;
+        width: 100%;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-start;
+        }
+    }
+}
+
+.auth-container{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    img{
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .names{
+        display: flex;
+        gap: 12px;
+    }
+}
+
+
+
+form{
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    span{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+label:has(input[type="checkbox"]){
+    flex-direction: row;
+}
+
+.cover-container{
+    padding: 0;
+    position: relative;
+    max-height: 300px;
+
+    .banner{
+        filter: brightness(.5);
+    }
+
+    .overlay{
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        bottom: 30px;
+        color: #fff;
+
+        .avatar{
+            width: 128px;
+            height: 128px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.list .element{
+    padding: 16px;
+    background-color: var(--primary-bg);
+    border-radius: 12px;
+
+}
+
+.side-by-side{
+    display: flex;
+    gap: 16px;
+}
+
+.settings-container, .filters{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stars{
+    display: flex;
+    gap: 5px;
+    img{
+        width: 16px;
+        height: 16px;
+    }
+}
+
+h2{
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+h3{
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+}
+
+a{
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+button, input[type="submit"]{
+    font-weight: 600;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.secondary{
+    color: var(--secondary-text);
+}

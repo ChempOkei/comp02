@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - BestGames</title>
+    <link rel="stylesheet" href="css/base.css">
+    <!--Фишки для SEO, чтобы сайт взлетел в Яндексе-->
+    <link rel="shortcut icon" href="assets/img/icons/logo.svg" type="image/x-icon">
+    <meta name="description" content="Сайт для покупки игр, лучшие цены, последние новинки и выгодные скидки. Только у нас">
+</head>
+<body class="light">
+    <header>
+        <a href="index.html" class="logo">
+            <img src="/assets/img/icons/logo.svg" alt="bestgames logo" loading="lazy">
+            <h3>best<span>games</span></h3>
+        </a>
+        <nav id="menu">
+            <a href="index.html#search">Поиск</a>
+            <a href="login.html">Войти</a>
+            <a href="profile.html">Личный кабинет</a>
+            <a href="catalog.html">Каталог игр</a>
+        </nav>
+        <a href="#menu" style="font-size: 24px;" class="btn__burger">≡</a>
+    </header>
+    <main>
+        <!-- Слайдер с ленивой загрузкой картинок, для скорости -->
+        <section id="slider">
+            <div class="slider__slide">
+                <img src="assets/img/slider/slide1.jpg" alt="Cyberpunk" loading="lazy">
+                <div class="slider__slide__info">
+                    <h2>Cyberpunk 2077: Phantom Liberty</h2>
+                    <p class="secondary">Добро пожажловать в Найт-Сити. Здесь вас ждут роботы, небоскребы и киберпанк</p>
+                    <h3>2 999 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+            
+            <div class="slider__slide">
+                <img src="assets/img/slider/slide2.jpg" alt="Elden Ring" loading="lazy">
+                <div class="slider__slide__info">
+                    <h2>Elden Ring</h2>
+                    <h3>3 499 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+            
+            <div class="slider__slide">
+                <img src="assets/img/slider/slide3.jpg" alt="Diablo IV" loading="lazy">
+                <div class="slider__slide__info">
+                    <h2>Diablo IV</h2>
+                    <h3>3 999 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="slider__slide">
+                <img src="assets/img/games/image5.jpg" alt="Witcher" loading="lazy">
+                <div class="slider__slide__info">
+                    <h2>The Witcher 3: Wild Hunt</h2>
+                    <h3>1 299 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+        </section>
+        <section id="search">
+            <input type="search" list="types" id="types-games" name="types-games" placeholder="Поиск по жанрам">
+            <datalist id="types">
+                <option value="Action"></option>
+                <option value="RPG"></option>
+                <option value="Приключения"></option>
+                <option value="Песочница"></option>
+                <option value="Открытый мир"></option>
+            </datalist>
+        </section>
+        <h2>Наши преимущества</h2>
+        <section id="advantages">
+            <div class="advantages__advantage">
+                <img src="assets/img/infographics/prices.svg" alt="Prices" loading="lazy">
+                <h3>Привлекательные цены</h3>
+            </div>
+            <div class="advantages__advantage">
+                <img src="assets/img/infographics/discounts.svg" alt="discounts" loading="lazy">
+                <h3>Ежемесячные акции</h3>
+            </div>
+            <div class="advantages__advantage">
+                <img src="assets/img/infographics/support.svg" alt="support" loading="lazy">
+                <h3>Круглосуточная поддержка</h3>
+            </div>
+            <div class="advantages__advantage">
+                <img src="assets/img/infographics/purchase.svg" alt="purchase" loading="lazy">
+                <h3>Быстрая покупка</h3>
+            </div>
+        </section>
+        <h2>Популярные игры</h2>
+        <section id="popular-games">
+            <div class="popular-games__game">
+                <img src="assets/img/games/image1.jpg" alt="Assassin" loading="lazy">
+                <div class="info">
+                    <h2>Assassin's Creed Valhalla</h2>
+                    <h3 class="tags"><span>Action/RPG</span>/<span>Ubisoft</span></h3>
+                    <span class="stars"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"></span>
+                    <h3>2 799 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+            <div class="popular-games__game">
+                <img src="assets/img/games/image2.jpg" alt="Cyberpunk" loading="lazy">
+                <div class="info">
+                    <h2>Cyberpunk 2077</h2>
+                    <h3 class="tags"><span>Action/RPG</span>/<span>CD Projekt Red</span></h3>
+                    
+                    <span class="stars"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"></span>
+                    <h3>2 999 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+            <div class="popular-games__game">
+                <img src="assets/img/games/image3.jpg" alt="Elden Ring" loading="lazy">
+                <div class="info">
+                    <h2>Elden Ring</h2>
+                    <h3 class="tags"><span>Souls-like RPG</span>/<span>FromSoftware</span></h3>
+                    <span class="stars"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"></span>
+                    <h3>3 499 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+            <div class="popular-games__game">
+                <img src="assets/img/games/image4.jpg" alt="Diablo IV" loading="lazy">
+                <div class="info">
+                    <h2>Diablo IV</h2>
+                    <h3 class="tags"><span>Action/RPG</span>/<span>Blizzard Entertainment</span></h3>
+                    <span class="stars"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"></span>
+                    <h3>3 999 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+            <div class="popular-games__game">
+                <img src="assets/img/games/image5.jpg" alt="Witcher" loading="lazy">
+                <div class="info">
+                    <h2>The Witcher 3: Wild Hunt</h2>
+                    <h3 class="tags"><span>RPG</span>/<span>CD Projekt Red</span></h3>
+                    <span class="stars"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"><img src="/assets/img/icons/star.svg" alt="star icon"></span>
+                    <h3>1 299 ₽</h3>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+            </div>
+        </section>
+        <h2>Партнёры</h2>
+        <section id="partners">
+            <a href="https://max.ru" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/img/partners/max-app-icon-on-a-transparent-background-free-.png" alt="Max" loading="lazy">
+            </a>
+            <a href="https://steam.com" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/img/partners/Steam_icon_logo.svg.png" alt="Steam" loading="lazy">
+            </a>
+            <a href="https://xbox.com" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/img/partners/Xbox_logo_(2019).svg.png" alt="Xbox" loading="lazy">
+            </a>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div>
+                <div class="logo">
+                    <img src="/assets/img/icons/logo.svg" alt="bestgames logo" loading="lazy">
+                    <h3>best<span>games</span></h3>
+                </div>
+                <p class="secondary">Лучший магазин с играми, честно-честно</p>
+            </div>
+            <div>
+                <a href="tel:+88009995599">+8 (800) 999-55-99</a>
+                <a href="mailto:best@games.ru">best@games.ru</a>
+                <a href="#">Клиентам</a>
+                <a href="#">Партнёрам</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div>
+                <a href="index.html">Главная</a>
+                <a href="register.html">Регистрация</a>
+                <a href="login.html">Авторизация</a>
+                <a href="profile.html">Личный кабинет</a>
+                <a href="index.html#search">Поиск</a>
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>
